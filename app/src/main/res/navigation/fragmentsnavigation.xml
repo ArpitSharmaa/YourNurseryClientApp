@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentsnavigation"
+    app:startDestination="@id/categoryFragment">
+    <fragment
+        android:id="@+id/PRODUCTFRAGMENT"
+        android:name="com.example.yournursery.ProductsFragment"
+        android:label="fragment_products"
+        tools:layout="@layout/fragment_products" >
+        <action
+            android:id="@+id/action_PRODUCTFRAGMENT_to_blankFragment"
+            app:destination="@id/blankFragment" />
+        <action
+            android:id="@+id/action_PRODUCTFRAGMENT_to_productdetailsfrag"
+            app:destination="@id/productdetailsfrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.yournursery.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_PRODUCTFRAGMENT"
+            app:destination="@id/PRODUCTFRAGMENT" />
+        <action
+            android:id="@+id/action_categoryFragment_to_blankFragment"
+            app:destination="@id/blankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.yournursery.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" >
+        <action
+            android:id="@+id/action_blankFragment_to_productdetailsfrag"
+            app:destination="@id/productdetailsfrag" />
+        <action
+            android:id="@+id/action_blankFragment_to_signup_loginfrag"
+            app:destination="@id/signup_loginfrag" />
+        <action
+            android:id="@+id/action_blankFragment_to_signup_loginfrag2"
+            app:destination="@id/signup_loginfrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/productdetailsfrag"
+        android:name="com.example.yournursery.Productdetailsfrag"
+        android:label="fragment_productdetailsfrag"
+        tools:layout="@layout/fragment_productdetailsfrag" >
+        <action
+            android:id="@+id/action_productdetailsfrag_to_blankFragment"
+            app:destination="@id/blankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup_loginfrag"
+        android:name="com.example.yournursery.signup_loginfrag"
+        android:label="fragment_signup_loginfrag"
+        tools:layout="@layout/fragment_signup_loginfrag" >
+        <action
+            android:id="@+id/action_signup_loginfrag_to_checkOut"
+            app:destination="@id/checkOut" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkOut"
+        android:name="com.example.yournursery.CheckOut"
+        android:label="fragment_check_out"
+        tools:layout="@layout/fragment_check_out" >
+        <action
+            android:id="@+id/action_checkOut_to_categoryFragment"
+            app:destination="@id/categoryFragment"
+            app:popUpTo="@id/categoryFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_checkOut_to_blankFragment"
+            app:destination="@id/blankFragment" />
+    </fragment>
+</navigation>
